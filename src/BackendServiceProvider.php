@@ -22,7 +22,7 @@ class BackendServiceProvider extends ServiceProvider
     {
         $this->handleConfigs();
         // $this->handleMigrations();
-        // $this->handleViews();
+        $this->handleViews();
         // $this->handleTranslations();
         // $this->handleRoutes();
     }
