@@ -1,11 +1,11 @@
-<nav class="bg-gray-800" x-data='{open: false}' style="z-index: 10000;">
-    <div class="px-2 sm:px-6 lg:px-8">
+<nav class="bg-gray-800" x-data='{open: false}' @click.away="open = false">
+    <div class="px-2 md:px-6 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
-            <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
+            <div class="absolute inset-y-0 left-0 flex items-center md:hidden">
                 <!-- Mobile menu button-->
                 <button @click="open = !open"
-                    @click.away="open = false"
-                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
+                    class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white
+                    hover:bg-gray-700 focus:outline-none focus:bg-gray-700 focus:text-white transition duration-150 ease-in-out"
                     aria-label="Main menu" aria-expanded="false">
                     <!-- Icon when menu is closed. -->
                     <!-- Menu open: "hidden", Menu closed: "block" -->
@@ -23,15 +23,15 @@
                     </svg>
                 </button>
             </div>
-            <div class="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-                <div class="flex-shrink-0">
+            <div class="flex-1 flex items-center justify-center md:items-stretch md:justify-start">
+                <div class="flex-shrink-0 flex items-center">
                     <img class="block lg:hidden h-8 w-auto"
                         src="https://tailwindui.com/img/logos/workflow-mark-on-dark.svg" alt="Workflow logo">
                     <img class="hidden lg:block h-8 w-auto"
                         src="https://tailwindui.com/img/logos/workflow-logo-on-dark.svg" alt="Workflow logo">
                 </div>
-                <div class="hidden sm:block sm:ml-6">
-                    <div class="flex">
+                <div class="hidden md:block md:ml-6">
+                    <div x-cloak class="flex">
                         @hasSection ('navbar-top')
                             @yield('navbar-top')
                         @else
@@ -47,7 +47,7 @@
                     </div>
                 </div>
             </div>
-            <div class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div x-cloak class="absolute inset-y-0 right-0 flex items-center pr-2 md:static md:inset-auto md:ml-6 md:pr-0">
                 <button
                     class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700 transition duration-150 ease-in-out"
                     aria-label="Notifications">
@@ -58,9 +58,9 @@
                 </button>
 
                 <!-- Profile dropdown -->
-                <div class="ml-3 relative" x-data="{ dropdownopen: false }">
+                <div class="ml-3 relative" x-data="{ dropdownopen: false }" @click.away='dropdownopen = false'>
                     <div>
-                        <button @click='dropdownopen = !dropdownopen' @click.away='dropdownopen = false'
+                        <button @click='dropdownopen = !dropdownopen'
                             class="flex text-sm border-2 border-transparent rounded-full focus:outline-none focus:border-white transition duration-150 ease-in-out"
                             id="user-menu" aria-label="User menu" aria-haspopup="true">
                             <img class="h-8 w-8 rounded-full"
@@ -68,16 +68,6 @@
                                 alt="">
                         </button>
                     </div>
-                    <!--
-              Profile dropdown panel, show/hide based on dropdown state.
-
-              Entering: "transition ease-out duration-100"
-                From: "transform opacity-0 scale-95"
-                To: "transform opacity-100 scale-100"
-              Leaving: "transition ease-in duration-75"
-                From: "transform opacity-100 scale-100"
-                To: "transform opacity-0 scale-95"
-            -->
                     <div class="origin-top-right absolute right-0 mt-2 w-48 rounded-md shadow-lg"
                         x-show="dropdownopen"
                         x-transition:enter="transition ease-out duration-100"
@@ -104,12 +94,6 @@
             </div>
         </div>
     </div>
-
-    <!--
-      Mobile menu, toggle classes based on menu state.
-
-      Menu open: "block", Menu closed: "hidden"
-    -->
     <div :class="{'block md:hidden': open, 'hidden': !open}" x-cloak>
         @hasSection ('navbar-mobile')
             @yield('navbar-mobile')
