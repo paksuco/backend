@@ -24,6 +24,8 @@
         html {
             font-family: 'PT Sans', sans-serif;
         }
+        [x-cloak=""] { display: none; }
+
     </style>
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">

@@ -1,4 +1,4 @@
-<nav class="bg-gray-900">
+<nav class="bg-white shadow z-20">
     <div class="px-2 lg:px-8">
         <div class="relative flex items-center justify-between h-16">
             <div class="absolute inset-y-0 left-0 flex items-center lg:hidden">
