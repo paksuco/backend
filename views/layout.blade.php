@@ -10,7 +10,7 @@
         <div class="w-full content z-0 bg-cool-gray-100" x-cloak :class="{'lg:w-4/5 xl:w-5/6': open_sidebar}">
             <div class="w-full p-4">
                 <div class="w-full px-5 py-3 text-xs bg-cool-gray-50 rounded shadow text-gray-900">
-                    <b>Home</b> > <b>Bread</b> > <b>Crumbs</b> > <a href="#">Here</a>
+                    <b>Home</b> &raquo; <b>Bread</b> &raquo; <b>Crumbs</b> &raquo; <a href="#">Here</a>
                 </div>
             </div>
             <div class="flex flex-col min-h-screen p-4">@yield('body')</div>
