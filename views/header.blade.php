@@ -25,9 +25,9 @@
         <div class="flex-1 flex items-center justify-center lg:items-stretch lg:justify-start">
             <div class="flex-shrink-0 flex items-center">
                 <img class="block lg:hidden h-8 w-auto"
-                    src="{{asset('/assets/img/logo-mark.svg')}}" alt="Workflow logo">
+                    src="{{asset('/assets/img/watchbeetle_icon.png')}}" alt="Watchbeetle logo">
                 <img class="hidden lg:block h-8 w-auto"
-                    src="{{asset('/assets/img/logo.svg')}}" alt="Workflow logo">
+                    src="{{asset('/assets/img/watchbeetle_full_light.png')}}" alt="Watchbeetle logo">
             </div>
             <div class="hidden lg:block lg:ml-6">
                 <div x-cloak class="flex">
